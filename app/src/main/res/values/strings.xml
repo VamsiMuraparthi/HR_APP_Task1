@@ -21,5 +21,9 @@
     <string name="employee_name">Person</string>
     <string name="wish_them_text">Wish them</string>
     <string name="announcements_heading">Announcements</string>
+    <string name="announcement_employee_name">Sri Vaishnavi Bhogadi made an\nannoucement</string>
+    <string name="announcement_date">30 Jan</string>
+    <string name="announcement_subject">Availing Transport Facilities for Keka\nJosh</string>
+    <string name="announcement_body">Hello everyone,\n\n We are thrilled to announcement that for our\nupcoming Keka Josh event,the company will be providing transportation facilities to take the hassle out of your journey! you can now focus on having a blast without worrying about how to get there or back.</string>
 
 </resources>
