@@ -13,7 +13,12 @@ import android.widget.TextView
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-class Home : Fragment() {
+/**
+ * A simple [Fragment] subclass.
+ * Use the [meActivity.newInstance] factory method to
+ * create an instance of this fragment.
+ */
+class meActivity : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -25,6 +30,7 @@ class Home : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
     }
+
     val holidays = arrayOf(
         "Maha Shivaratri", "Holi", "Good Friday", "Ugadi", "Eid AI Fitr", "Ram Navami",
         "Bakrid/Eid al Adha", "Independence Day", "Rakshabandhan", "Krishna Jayanti/Janmashtmi"
@@ -40,27 +46,31 @@ class Home : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
+        val view = inflater.inflate(R.layout.fragment_me, container, false)
 
-        val linearLayout: LinearLayout = view.findViewById(R.id.holidayScrollView)
-        val listItem: View = LayoutInflater.from(requireContext()).inflate(R.layout.holiday_fragment, linearLayout, false)
-        val holiday: TextView = listItem.findViewById(R.id.holidayText)
-        val date: TextView = listItem.findViewById(R.id.dateText)
+        val linearLayout: LinearLayout = view.findViewById(R.id.horizontalLinearLayout)
+
+
         for (i in holidays.indices) {
+            val listItem: View = LayoutInflater.from(requireContext()).inflate(R.layout.holiday_fragment, linearLayout, false)
+            val holiday: TextView = listItem.findViewById(R.id.holidayText)
+            val date: TextView = listItem.findViewById(R.id.dateText)
+
             holiday.text = holidays[i]
             date.text = dates[i]
 
-            // Add the listItem to the horizontalLinearLayout
             linearLayout.addView(listItem)
         }
         return view
     }
 
+
     companion object {
+
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            Home().apply {
+            meActivity().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

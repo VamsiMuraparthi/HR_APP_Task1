@@ -1,680 +1,325 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    tools:context=".homeActivity">
 
-    <!-- First Card -->
-    <LinearLayout
-        android:id="@+id/firstCard"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:orientation="horizontal"
-        android:padding="8dp">
+        android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="10dp">
-
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/circular_background_2"
-                android:padding="8dp"
-                android:src="@drawable/ic_baseline_flight_takeoff_24" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Apply\nLeave" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="25dp">
-
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/circular_background_2"
-                android:padding="8dp"
-                android:src="@drawable/ic_baseline_panorama_vertical_24" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Raise\nTicket"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="25dp">
-
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/circular_background_2"
-                android:padding="8dp"
-                android:src="@drawable/ic_baseline_price_check_24" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Raise\nExpense" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="25dp">
-
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/circular_background_2"
-                android:padding="8dp"
-                android:src="@drawable/ic_baseline_dataset_24" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Leave\nBalance" />
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-
-    <!-- Second Card -->
-    <LinearLayout
-        android:id="@+id/secondCard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/firstCard"
-        android:orientation="vertical"
-        android:padding="8dp">
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardWithinSecondCard"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/quick_assist_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_gravity="center_horizontal"
-            app:cardBackgroundColor="@color/purple_200"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="8dp">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+            <ImageView
+                android:id="@+id/ApplyLeaveIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/circular_background_2"
+                android:contentDescription="@string/apply_leave_icon_description"
+                android:src="@drawable/ic_baseline_flight_takeoff_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="SHIFT TODAY : GENERAL(9:00 AM - 06:00PM)"
-                    android:textColor = "@color/white"
-                    android:textStyle = "bold"
-                    android:layout_gravity="left"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingTop = "8dp">
-
-                    <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/id_table"
-                        android:background = "@drawable/circular_background_3"
-                        android:layout_gravity="left"
-                        android:padding="8dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="26 Jan Friday \n0h/8h"
-                        android:textColor = "@color/white"
-                        android:textStyle = "bold"
-
-                        android:layout_gravity="left"
-                        android:padding = "10dp"/>
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-
-    </LinearLayout>
-
-
-
-    <!-- Third Card -->
-    <RelativeLayout
-        android:id="@+id/thirdCard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/secondCard"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:id = "@+id/off_this_week_text"
-            android:text="Off this week"
-            android:textStyle = "bold"
-            android:textSize = "20dp"/>
-
-
-        <HorizontalScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/off_this_week_text"
-            android:scrollbars="none">
-
-            <LinearLayout
-                android:id="@+id/scrollView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:orientation="vertical">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:padding="8dp"
-                        android:src="@drawable/person" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Person 1" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:orientation="vertical">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:padding="8dp"
-                        android:src="@drawable/person" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Person 1" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:orientation="vertical">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:padding="8dp"
-                        android:src="@drawable/person" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Person 1" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:orientation="vertical">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:padding="8dp"
-                        android:src="@drawable/person" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Person 1" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:orientation="vertical">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:padding="8dp"
-                        android:src="@drawable/person" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Person 1" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:orientation="vertical">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:padding="8dp"
-                        android:src="@drawable/person" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Person 1" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:orientation="vertical">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:padding="8dp"
-                        android:src="@drawable/person" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Person 1" />
-                </LinearLayout>
-            </LinearLayout>
-
-
-        </HorizontalScrollView>
-    </RelativeLayout>
-
-
-
-    <!-- Fourth Card -->
-    <RelativeLayout
-        android:id="@+id/fourthCard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/thirdCard"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:id = "@+id/wish_them_text"
-            android:text="Wish them"
-            android:textStyle = "bold"
-            android:textSize = "20dp"/>
-
-
-        <HorizontalScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/wish_them_text"
-            android:scrollbars="none">
-
-            <LinearLayout
-                android:id="@+id/scrollView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:orientation="vertical">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:padding="8dp"
-                        android:src="@drawable/person" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Person 1" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Today" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:orientation="vertical">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:padding="8dp"
-                        android:src="@drawable/person" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Person 1" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Today" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:orientation="vertical">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:padding="8dp"
-                        android:src="@drawable/person" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Person 1" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Today" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:orientation="vertical">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:padding="8dp"
-                        android:src="@drawable/person" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Person 1" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Today" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:orientation="vertical">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:padding="8dp"
-                        android:src="@drawable/person" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Person 1" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Today" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:orientation="vertical">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:padding="8dp"
-                        android:src="@drawable/person" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Person 1" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Today" />
-                </LinearLayout>
-
-                <LinearLayout
+            <TextView
+                android:id="@+id/ApplyLeaveText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:orientation="vertical">
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="@string/apply_leave_text"
+                app:layout_constraintEnd_toEndOf="@+id/ApplyLeaveIcon"
+                app:layout_constraintStart_toStartOf="@+id/ApplyLeaveIcon"
+                app:layout_constraintTop_toBottomOf="@+id/ApplyLeaveIcon" />
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:padding="8dp"
-                    android:src="@drawable/person" />
+            <ImageView
+                android:id="@+id/RaiseTicketIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/circular_background_2"
+                android:contentDescription="@string/raise_ticket_icon_description"
+                android:src="@drawable/ic_baseline_panorama_vertical_24"
+                app:layout_constraintStart_toEndOf="@+id/ApplyLeaveIcon"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Person 1" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Today" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/RaiseTicketText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="@string/raise_ticket_text"
+                app:layout_constraintEnd_toEndOf="@+id/RaiseTicketIcon"
+                app:layout_constraintStart_toStartOf="@+id/RaiseTicketIcon"
+                app:layout_constraintTop_toBottomOf="@+id/RaiseTicketIcon" />
 
-            </LinearLayout>
-        </HorizontalScrollView>
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/RaiseExpenseIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/circular_background_2"
+                android:contentDescription="@string/raise_expense_icon_description"
+                android:src="@drawable/ic_baseline_price_check_24"
+                app:layout_constraintStart_toEndOf="@+id/RaiseTicketIcon"
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                android:id="@+id/RaiseExpenseText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="@string/raise_expense_text"
+                app:layout_constraintEnd_toEndOf="@+id/RaiseExpenseIcon"
+                app:layout_constraintStart_toStartOf="@+id/RaiseExpenseIcon"
+                app:layout_constraintTop_toBottomOf="@+id/RaiseExpenseIcon" />
 
+            <ImageView
+                android:id="@+id/LeaveBalanceIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/circular_background_2"
+                android:contentDescription="@string/leave_balance_icon_description"
+                android:src="@drawable/ic_baseline_dataset_24"
+                app:layout_constraintStart_toEndOf="@+id/RaiseExpenseIcon"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Announcements Layer -->
-    <RelativeLayout
-        android:id="@+id/fifthCard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/fourthCard"
-        android:orientation="horizontal"
-        android:padding="8dp">
+            <TextView
+                android:id="@+id/LeaveBalanceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="@string/leave_balance_text"
+                app:layout_constraintEnd_toEndOf="@+id/LeaveBalanceIcon"
+                app:layout_constraintStart_toStartOf="@+id/LeaveBalanceIcon"
+                app:layout_constraintTop_toBottomOf="@+id/LeaveBalanceIcon" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:id = "@+id/announcement_text"
-            android:text="Announcements"
-            android:textStyle = "bold"
-            android:textSize = "20dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.cardview.widget.CardView
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/schedule_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            app:cardCornerRadius="8dp"
-            android:elevation="8dp"
-            android:padding = "8dp"
-            android:layout_below="@id/announcement_text">
+            app:layout_constraintTop_toBottomOf="@+id/quick_assist_layout">
 
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@color/secondaryColor"
+                app:cardCornerRadius="10dp"
+                app:cardMaxElevation="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <LinearLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/shift_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/allotted_shift_text"
+                        app:layout_constraintStart_toEndOf="@+id/shift_today_text"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/shift_today_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/shift_today_text"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
+                        android:id="@+id/shift_today_icon"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/circular_background_3"
                         android:src="@drawable/ic_baseline_dataset_24"
-                        android:background = "@drawable/circular_background_2"
-                        android:layout_gravity="left"
-                        android:padding="8dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Neha Deshpande made an \nannouncement\n23 jan"
-                        android:textStyle = "bold"
-                        android:layout_gravity="left"
-                        android:layout_marginLeft = "5dp"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/shift_today_text" />
 
                     <TextView
+                        android:id="@+id/date_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Get Ready for KEKA JOSH - Cultural\nActivities Ahead!"
-                        android:textStyle = "bold"
-                        android:layout_gravity="left"
-                        android:layout_marginLeft = "5dp"/>
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/date_text"
+                        app:layout_constraintStart_toEndOf="@+id/shift_today_icon"
+                        app:layout_constraintTop_toBottomOf="@+id/shift_today_text" />
 
                     <TextView
+                        android:id="@+id/day_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Dear Keka Superstars,\n\nFantastic news awaits you! dsfkajvnsczxlkvjdsclkxzvjdsklcxzjvnczvxkblkdsjcvblkdcjzxvcxzvkljbsdklczxvjbdkzcxjvcgkvxznflzdjkxcvnxczn,vj gkvjbefsdljvkndm,sfxc"
-                        android:textStyle = "bold"
-                        android:layout_gravity="left"
-                        android:layout_marginLeft = "5dp"/>
-                </LinearLayout>
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/day_text"
+                        app:layout_constraintStart_toEndOf="@+id/date_text"
+                        app:layout_constraintTop_toBottomOf="@+id/shift_text" />
 
+                    <TextView
+                        android:id="@+id/effective_hours_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/effective_working_hours"
+                        app:layout_constraintStart_toEndOf="@+id/shift_today_icon"
+                        app:layout_constraintTop_toBottomOf="@+id/date_text" />
 
-            </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.cardview.widget.CardView>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/all_announcements"
-        android:layout_below="@id/fifthCard"
-        android:padding="8dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text = "See all announcements"
-                android:textColor = "@color/purple_200"/>
-        </LinearLayout>
-
-    </RelativeLayout>
-
-    <!-- Fifth Card -->
-    <RelativeLayout
-        android:id="@+id/sixCard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/all_announcements"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Upcoming Holidays"
-            android:id = "@+id/upcomingText"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
-
-        <HorizontalScrollView
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/off_this_week_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="none"
-            android:layout_below="@id/upcomingText">
+            app:layout_constraintTop_toBottomOf="@+id/schedule_layout">
 
-            <LinearLayout
-                android:id="@+id/holidayScrollView"
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/image_recyclerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/off_this_week_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/wish_them_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/off_this_week_layout">
+
+
+            <TextView
+                android:id="@+id/off_this_week_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/wish_them_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/wish_them_recyclerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/off_this_week_heading" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/announcements_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wish_them_layout">
+
+            <TextView
+                android:id="@+id/announcement_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/announcements_heading"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                app:cardBackgroundColor="@color/secondaryColor"
+                app:cardCornerRadius="10dp"
+                app:cardMaxElevation="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/announcement_heading">
 
-            </LinearLayout>
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView" />
+            </androidx.cardview.widget.CardView>
 
-        </HorizontalScrollView>
-    </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/holidays_layout"
+            app:layout_constraintTop_toBottomOf="@+id/announcements_layout">
 
-</RelativeLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </TextView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

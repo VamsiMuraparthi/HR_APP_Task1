@@ -7,7 +7,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import com.example.task_1.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 
@@ -20,7 +19,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        replaceFragment(Home())
+        replaceFragment(homeActivity())
 
         setSupportActionBar(binding.toolbar)
 
@@ -40,10 +39,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         binding.bottomNavigation.setOnItemSelectedListener {
             when(it.itemId){
-                R.id.home -> replaceFragment(Home())
-                R.id.inbox -> replaceFragment(Inbox())
-                R.id.me -> replaceFragment(Me())
-                R.id.myTeam -> replaceFragment(MyTeam())
+                R.id.home -> replaceFragment(homeActivity())
+                R.id.inbox -> replaceFragment(InboxActivity())
+                R.id.me -> replaceFragment(meActivity())
+                R.id.myTeam -> replaceFragment(myteamActivity())
 
                 else -> {
 
