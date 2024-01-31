@@ -143,6 +143,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
+                        android:textColor="@color/black"
                         android:text="@string/allotted_shift_text"
                         app:layout_constraintStart_toEndOf="@+id/shift_today_text"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -153,6 +154,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
+                        android:textColor="@color/black"
                         android:text="@string/shift_today_text"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -168,7 +170,8 @@
                         android:src="@drawable/ic_baseline_dataset_24"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/shift_today_text" />
+                        app:layout_constraintTop_toBottomOf="@+id/shift_today_text"
+                        android:contentDescription="@string/shift_today_text"/>
 
                     <TextView
                         android:id="@+id/date_text"
@@ -177,6 +180,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="5dp"
                         android:text="@string/date_text"
+                        android:textColor="@color/black"
                         app:layout_constraintStart_toEndOf="@+id/shift_today_icon"
                         app:layout_constraintTop_toBottomOf="@+id/shift_today_text" />
 
@@ -186,6 +190,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
+                        android:textColor="@color/black"
                         android:text="@string/day_text"
                         app:layout_constraintStart_toEndOf="@+id/date_text"
                         app:layout_constraintTop_toBottomOf="@+id/shift_text" />
@@ -196,6 +201,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="5dp"
+                        android:textColor="@color/black"
                         android:text="@string/effective_working_hours"
                         app:layout_constraintStart_toEndOf="@+id/shift_today_icon"
                         app:layout_constraintTop_toBottomOf="@+id/date_text" />
@@ -310,7 +316,8 @@
                         android:layout_marginTop="5dp"
                         android:src="@drawable/ic_baseline_person_24"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:contentDescription="@string/announcement_employee_name"/>
 
                     <TextView
                         android:id="@+id/announcement_employee_name"
@@ -318,6 +325,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
+                        android:textColor="@color/black"
                         android:text="@string/announcement_employee_name"
                         app:layout_constraintStart_toEndOf="@+id/annoucement_employee_image"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -328,6 +336,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
+                        android:textColor="@color/black"
                         android:text="@string/announcement_date"
                         app:layout_constraintStart_toEndOf="@+id/annoucement_employee_image"
                         app:layout_constraintTop_toBottomOf="@+id/announcement_employee_name" />
