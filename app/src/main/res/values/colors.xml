@@ -10,4 +10,5 @@
     <color name="grey">#363636</color>
     <color name="Lightgrey">#f0edf0</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="splash_screen_color">#101727</color>
 </resources>

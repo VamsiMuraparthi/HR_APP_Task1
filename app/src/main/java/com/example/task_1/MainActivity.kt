@@ -21,10 +21,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(binding.root)
         replaceFragment(homeActivity())
 
-        setSupportActionBar(binding.toolbar)
+        setSupportActionBar(binding.actionBar)
 
 
-        val toggle = ActionBarDrawerToggle(this, binding.drawerLayout, binding.toolbar,R.string.nav_open, R.string.nav_close)
+        val toggle = ActionBarDrawerToggle(this, binding.drawerLayout, binding.actionBar,R.string.nav_open, R.string.nav_close)
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
