@@ -1,35 +1,28 @@
 package com.example.task_1
 
+import Adapters.TabsAdapter
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.viewpager2.widget.ViewPager2
+import com.example.task_1.MeFragmentTabs.FinanceTabActivity
+import com.example.task_1.MeFragmentTabs.HelpDeskTabActivity
+import com.example.task_1.MeFragmentTabs.PerformanceTabActivity
+import com.example.task_1.MeFragmentTabs.TimeTabActivity
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [meActivity.newInstance] factory method to
- * create an instance of this fragment.
- */
 class meActivity : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private lateinit var tabLayout: TabLayout
+    private lateinit var adapter: TabsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
+
 
     val holidays = arrayOf(
         "Maha Shivaratri", "Holi", "Good Friday", "Ugadi", "Eid AI Fitr", "Ram Navami",
@@ -48,20 +41,40 @@ class meActivity : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_me, container, false)
 
-        val linearLayout: LinearLayout = view.findViewById(R.id.horizontalLinearLayout)
+        val viewPager: ViewPager2 = view.findViewById(R.id.viewPager)
+        val tabLayout: TabLayout = view.findViewById(R.id.tabLayout)
+        adapter = TabsAdapter(this)
 
+        val fragments  = arrayOf(FinanceTabActivity(),HelpDeskTabActivity(),PerformanceTabActivity(),TimeTabActivity())
 
-        for (i in holidays.indices) {
-            val listItem: View = LayoutInflater.from(requireContext()).inflate(R.layout.holiday_fragment, linearLayout, false)
-            val holiday: TextView = listItem.findViewById(R.id.holidayText)
-            val date: TextView = listItem.findViewById(R.id.dateText)
+        viewPager.adapter = TabsAdapter(this)
 
-            holiday.text = holidays[i]
-            date.text = dates[i]
+        adapter.addFragment(TimeTabActivity())
+        adapter.addFragment(FinanceTabActivity())
+        adapter.addFragment(PerformanceTabActivity())
+        adapter.addFragment(HelpDeskTabActivity())
 
-            linearLayout.addView(listItem)
-        }
+        viewPager.adapter = adapter
+
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = "Tab ${position + 1}"
+        }.attach()
+
         return view
+
+//        val linearLayout: LinearLayout = view.findViewById(R.id.horizontalLinearLayout)
+//
+//
+//        for (i in holidays.indices) {
+//            val listItem: View = LayoutInflater.from(requireContext()).inflate(R.layout.holiday_fragment, linearLayout, false)
+//            val holiday: TextView = listItem.findViewById(R.id.holidayText)
+//            val date: TextView = listItem.findViewById(R.id.dateText)
+//
+//            holiday.text = holidays[i]
+//            date.text = dates[i]
+//
+//            linearLayout.addView(listItem)
+//        }
     }
 
 
@@ -71,10 +84,7 @@ class meActivity : Fragment() {
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             meActivity().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+
             }
     }
 }
