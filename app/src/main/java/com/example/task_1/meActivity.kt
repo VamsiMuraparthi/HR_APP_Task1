@@ -18,6 +18,7 @@ class meActivity : Fragment() {
 
     private lateinit var tabLayout: TabLayout
     private lateinit var adapter: TabsAdapter
+    private lateinit var viewPager: ViewPager2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,11 +44,12 @@ class meActivity : Fragment() {
 
         val viewPager: ViewPager2 = view.findViewById(R.id.viewPager)
         val tabLayout: TabLayout = view.findViewById(R.id.tabLayout)
+
         adapter = TabsAdapter(this)
 
         val fragments  = arrayOf(FinanceTabActivity(),HelpDeskTabActivity(),PerformanceTabActivity(),TimeTabActivity())
 
-        viewPager.adapter = TabsAdapter(this)
+        viewPager.isUserInputEnabled = true
 
         adapter.addFragment(TimeTabActivity())
         adapter.addFragment(FinanceTabActivity())
@@ -57,7 +59,7 @@ class meActivity : Fragment() {
         viewPager.adapter = adapter
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = "Tab ${position + 1}"
+            tab.text = adapter.getPageTitle(position)?.toString()?.lowercase()
         }.attach()
 
         return view

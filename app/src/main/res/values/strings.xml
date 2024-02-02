@@ -36,5 +36,31 @@
     <string name="request_history_heading">Request History</string>
     <string name="logs_shifts_body">View all attendance logs\nhere</string>
     <string name="request_history_body">View history for\nattendance requests</string>
+    <string name="leave">Leave</string>
+    <string name="apply_leave_heading">Apply Leave</string>
+    <string name="apply_leave_body">Apply for your next\nleave here</string>
 
+    <string name="leave_balance_heading">Leave Balance</string>
+    <string name="leave_balance_body">View your leave\nbalances, history and\ntransactions</string>
+
+    <string name="comp_off_heading">Comp off</string>
+    <string name="comp_off_body">Request for comp off\nview comp off history</string>
+
+    <string name="personal_feedback_heading">Personal Feedback</string>
+    <string name="personal_feedback_body">Give feedback and\nfoster a culture of\ncontinuous learning</string>
+
+    <string name="praise_heading">Praise</string>
+    <string name="praise_body">Take a moment to\nappreciate your peers achievements</string>
+
+
+    <string name="options_heading">Options</string>
+
+    <string name="ticket_history_heading">Ticket history</string>
+    <string name="ticket_history_body">Track your tickets\'\nstatus here</string>
+
+    <string name="following_heading">Following</string>
+    <string name="following_body">Tickets you\'re following,\nStay updated here</string>
+
+
+    <string name="raise_help_desk_ticket">Raise a Helpdesk Ticket</string>
 </resources>

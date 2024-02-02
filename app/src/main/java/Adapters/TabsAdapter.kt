@@ -15,4 +15,15 @@ class TabsAdapter constructor(fragment: Fragment) : FragmentStateAdapter(fragmen
     override fun getItemCount(): Int = fragments.size
 
     override fun createFragment(position: Int): Fragment = fragments[position]
+
+    fun getPageTitle(position: Int): CharSequence? {
+        // Return the title for the tab at the specified position
+        return when (position) {
+            0 -> "Time"
+            1 -> "Finance"
+            2 -> "Performance"
+            3 -> "Help Desk"
+            else -> null
+        }?.lowercase()
+    }
 }
